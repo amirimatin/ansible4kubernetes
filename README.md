@@ -9,7 +9,7 @@ Thera is a simple ansible playbook just to initail and install **K8S**. This is 
    - CPU: 2
    - RAM: 2
    - HDD: 20G
- * OS: Debian 9 [(Stretch)](https://shgn.ir/images/debian-9.13.0-amd64-xfce-CD-1.iso)
+ * OS: Debian 9 [(Stretch)](https://kuber.ir/images/debian-9.13.0-amd64-xfce-CD-1.iso)
  
  ### How to do it!
  

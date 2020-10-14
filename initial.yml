@@ -31,23 +31,23 @@
      tags:
      - new_worker
 
-   - name: create the 'shgn' user
-     user: name=shgn append=yes state=present createhome=yes shell=/bin/bash
+   - name: create the 'kuber' user
+     user: name=kuber append=yes state=present createhome=yes shell=/bin/bash
      tags:
      - new_worker
 
-   - name: allow 'shgn' to have passwordless sudo
+   - name: allow 'kuber' to have passwordless sudo
      lineinfile:
         dest: /etc/sudoers
-        line: 'shgn ALL=(ALL) NOPASSWD: ALL'
+        line: 'kuber ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
      tags:
      - new_worker
 
-   - name: set up authorized keys for the shgn user
-     authorized_key: user=shgn key="{{item}}"
+   - name: set up authorized keys for the kuber user
+     authorized_key: user=kuber key="{{item}}"
      with_file:
-         - ~/.ssh/id_rsa.pub
+         - /root/.ssh/id_rsa.pub
      tags:
      - new_worker
 
